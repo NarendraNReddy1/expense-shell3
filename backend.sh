@@ -52,5 +52,5 @@ then
     useradd expense &>>$LOG_FILE
     VALIDATE $? "Expense user add"
 else 
-    echo "Already user present $Y SKIPPING $N"
+    echo -e "Already user present $Y SKIPPING $N"
 fi         
