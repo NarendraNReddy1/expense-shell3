@@ -22,10 +22,10 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2...$R FAILURE $N"
+        echo -e "$2...$R FAILURE $N"
         exit 1
     else 
-        echo "$2...$G SUCCESS $N"
+        echo -e "$2...$G SUCCESS $N"
     fi
 }
 
@@ -36,8 +36,8 @@ dnf install mysql-server -y &>>$LOG_FILE
 VALIDATE $? "instllation of mysql server"
 
 systemctl enable mysqld &>>$LOG_FILE
-VALIDATE $? "instllation of mysql server"
+VALIDATE $? "Enable mysqld"
 
 systemctl start mysqld &>>$LOG_FILE
-VALIDATE $? "instllation of mysql server"
+VALIDATE $? "start mysqld"
 
