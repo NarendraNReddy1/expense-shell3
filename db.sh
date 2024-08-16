@@ -9,6 +9,9 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
+echo "Db Password: ExpenseApp@1"
+read -s mysql_root_password
+
 
 if [ $USER_ID -ne 0 ]
 then
@@ -40,4 +43,8 @@ VALIDATE $? "Enable mysqld"
 
 systemctl start mysqld &>>$LOG_FILE
 VALIDATE $? "start mysqld"
+
+
+mysql-hdb.narendra.shop-uroot-p${mysql_root_password}-e'show databases'&>>$LOG_FILE
+VALIDATE $? "Setting Root Password"
 
