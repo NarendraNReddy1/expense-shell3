@@ -47,7 +47,7 @@ VALIDATE $? "Installation of node jsr"
 
 id expense 
 
-if [ -ne 0 ]
+if [ $? -ne 0 ]
 then 
     useradd expense &>>$LOG_FILE
     VALIDATE $? "Installation of node jsr"
