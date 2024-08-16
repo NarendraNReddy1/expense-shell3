@@ -46,12 +46,12 @@ VALIDATE $? "start mysqld"
 
 
 mysql-hdb.narendra.shop-uroot-p${mysql_root_password}-e'show databases' &>>$LOG_FILE
-if [ $? -ne 0 ]
+if [ $? -eq 0 ]
 then 
-    mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOG_FILE
-    VALIDATE $? "mysql instllation"
+    echo "Root password already set $Y SKIPPING $N"
 else 
-    echo "Root password already set"
+    mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOG_FILE
+    VALIDATE $? "mysql root password"    
 fi         
 
 
