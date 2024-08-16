@@ -50,7 +50,7 @@ id expense &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
     useradd expense &>>$LOG_FILE
-    VALIDATE $? "Installation of node jsr"
+    VALIDATE $? "Expense user add"
 else 
     echo "Already user present"
 fi         
