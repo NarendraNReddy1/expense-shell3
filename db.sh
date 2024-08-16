@@ -45,6 +45,13 @@ systemctl start mysqld &>>$LOG_FILE
 VALIDATE $? "start mysqld"
 
 
-mysql-hdb.narendra.shop-uroot-p${mysql_root_password}-e'show databases'&>>$LOG_FILE
-VALIDATE $? "Setting Root Password"
+mysql-hdb.narendra.shop-uroot-p${mysql_root_password}-e'show databases' &>>$LOG_FILE
+if [ $? -ne 0 ]
+then 
+    mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOG_FILE
+    VALIDATE $? "mysql instllation"
+else 
+    echo "Root password already set"
+fi         
+
 
