@@ -45,7 +45,7 @@ systemctl start mysqld &>>$LOG_FILE
 VALIDATE $? "start mysqld"
 
 
-mysql-hdb.narendra.shop-uroot-p${mysql_root_password} -e 'show databases' &>>$LOG_FILE
+mysql-h db.narendra.shop-uroot -p${mysql_root_password} -e 'show databases' &>>$LOG_FILE
 if [ $? -eq 0 ]
 then 
     echo "Root password already set $Y SKIPPING $N"
