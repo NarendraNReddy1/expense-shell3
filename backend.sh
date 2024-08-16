@@ -76,3 +76,13 @@ VALIDATE $? "npm install"
 cp -rf /home/ec2-user/expense-shell3/backend.service /etc/systemd/system/backend.service &>>$LOG_FILE
 VALIDATE $? "copying backend service"
 
+
+systemctl daemon-reload &>>$LOG_FILE
+VALIDATE $? "daemon-reload"
+
+
+systemctl start backend &>>$LOG_FILE
+VALIDATE $? "start backend"
+
+systemctl enable backend &>>$LOG_FILE
+VALIDATE $? "enable backend"
