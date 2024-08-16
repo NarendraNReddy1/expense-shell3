@@ -63,6 +63,7 @@ VALIDATE $? "Backend code in temp"
 
 
 cd /app &>>$LOG_FILE
+rm -rf /app/*
 VALIDATE $? "Moving to App direcoty"
 
 unzip /tmp/backend.zip &>>$LOG_FILE
