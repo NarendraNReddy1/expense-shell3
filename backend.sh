@@ -53,4 +53,10 @@ then
     VALIDATE $? "Expense user add"
 else 
     echo -e "Already user present $Y SKIPPING $N"
-fi         
+fi        
+
+mkdir -p /app &>>$LOG_FILE
+VALIDATE $? "App direcoty"
+
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip  &>>$LOG_FILE
+VALIDATE $? "Backend code in temp"
