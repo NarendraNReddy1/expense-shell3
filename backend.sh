@@ -72,3 +72,7 @@ VALIDATE $? "Unzipping backend"
 
 npm install &>>$LOG_FILE
 VALIDATE $? "npm install"
+
+cp -rf /home/ec2-user/expense-shell3/backend.service /etc/systemd/system/backend.service &>>$LOG_FILE
+VALIDATE $? "copying backend service"
+
