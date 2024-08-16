@@ -65,3 +65,5 @@ VALIDATE $? "Backend code in temp"
 cd /app &>>$LOG_FILE
 VALIDATE $? "Moving to App direcoty"
 
+unzip /tmp/backend.zip &>>$LOG_FILE
+VALIDATE $? "Unzipping backend"
