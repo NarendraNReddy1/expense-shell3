@@ -68,3 +68,7 @@ VALIDATE $? "Moving to App direcoty"
 
 unzip /tmp/backend.zip &>>$LOG_FILE
 VALIDATE $? "Unzipping backend"
+
+
+npm install &>>$LOG_FILE
+VALIDATE $? "npm install"
