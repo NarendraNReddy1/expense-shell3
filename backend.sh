@@ -45,7 +45,7 @@ VALIDATE $? "Installation of node jsr"
 
 
 
-id expense 
+id expense &>>$LOG_FILE
 
 if [ $? -ne 0 ]
 then 
