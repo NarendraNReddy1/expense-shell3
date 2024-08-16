@@ -87,11 +87,11 @@ VALIDATE $? "start backend"
 systemctl enable backend &>>$LOG_FILE
 VALIDATE $? "enable backend"
 
-dnf install mysql -y &>>$LOG_FILE
-VALIDATE $? "Install mysql client"
+# dnf install mysql -y &>>$LOG_FILE
+# VALIDATE $? "Install mysql client"
 
-mysql -h db.narendra.shop -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOG_FILE
-VALIDATE $? "Install mysql client"
+# mysql -h db.narendra.shop -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOG_FILE
+# VALIDATE $? "Install mysql client"
 
-systemctl restart backend &>>$LOG_FILE
-VALIDATE $? "restart backend"
+# systemctl restart backend &>>$LOG_FILE
+# VALIDATE $? "restart backend"
